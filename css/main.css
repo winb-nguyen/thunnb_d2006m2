@@ -1,0 +1,162 @@
+@charset "utf-8";
+/* CSS Document */
+
+/*CSS FOR ICON*/
+i
+{
+    color: lightgrey;
+}
+
+
+/*LINK HOVER*/
+.link{
+    color: #555;
+    font-family: 'Noto Sans', sans-serif;
+    font-size: 25px;
+    font-weight: 500;
+    text-transform: capitalize;
+    line-height: 23px;
+    display: inline-block;
+    position: relative;
+    z-index: 1;
+    transition: all 0.5s ease 0s;
+}
+.link:hover{ color: #fff; }
+.link:before{
+    content: "";
+    border: 15px dashed #fff;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    transform: translateX(-50%) translateY(-50%) rotate(0) scale(0);
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    z-index: 1;
+}
+.link:hover:before,
+.link:focus:before{
+    animation: animate 0.3s linear;
+}
+@keyframes animate{
+    100%{
+        opacity: 0;
+        transform: translateX(-50%) translateY(-50%) rotate(360deg) scale(1);
+    }
+}
+@media only screen and (max-width: 767px){
+    .link{ margin-bottom: 30px; }
+}
+/*COUNTER*/
+.counter{
+    color: #444;
+    font-family: 'Poppins', sans-serif;
+    text-align: center;
+}
+.counter .counter-value{
+    color: #fff;
+    font-size: 33px;
+    font-weight: 600;
+    line-height: 128px;
+    height: 140px;
+    width: 140px;
+    margin: 0 auto 10px;
+    border-radius: 50% 0 50% 50%;
+    border: 7px solid #FF2B08;
+    border-right-color: transparent;
+    display: block;
+    position: relative;
+    z-index: 1;
+}
+.counter .counter-value:before{
+    content: '';
+    background: linear-gradient(to right bottom,#FF2B08,#FE9C04);
+    border-radius: 50%;
+    box-shadow: 0 0 10px -3px rgba(0,0,0,0.5);
+    position: absolute;
+    left: 6px;
+    top: 6px;
+    bottom: 6px;
+    right: 6px;
+    z-index: -1;
+}
+.counter h3{
+    color: #555;
+    font-size: 16px;
+    font-weight: 500;
+    text-transform: capitalize;
+    margin: 0;
+}
+.counter.purple .counter-value{
+    border-color: #6101E5;
+    border-right-color: transparent;
+}
+.counter.purple .counter-value:before{
+    background: linear-gradient(to right bottom,#6101E5,#9F27E8);
+}
+.counter.blue .counter-value{
+    border-color: #0284F3;
+    border-right-color: transparent;
+}
+.counter.blue .counter-value:before{
+    background: linear-gradient(to right bottom,#0284F3,#1DC0E1);
+}
+.counter.pink .counter-value{
+    border-color: #435CF8;
+    border-right-color: transparent;
+}
+.counter.pink .counter-value:before{
+    background: linear-gradient(to right bottom,#435CF8,#FF4674);
+}
+@media screen and (max-width:990px){
+    .counter{ margin-bottom: 40px; }
+}
+JavaScript (Counter depend on jQuery.)
+
+/*END COUNTER*/
+
+.testimonial-slider .carousel-indicators button {
+    width: 10px;
+    height: 10px;
+    background-color: #000;
+    border-radius: 100%;
+}
+.testimonial-slider {
+    padding: 10px 0px 40px;
+}
+
+
+/*SKILL*/
+.work-process {
+    max-width: 500px;
+    margin: 50px auto;
+}
+.work-process h3 {
+    margin: 30px 0px 10px;
+}
+.project-bar {
+    height: 18px;
+    background: #e0e0e0;
+    border-radius: 30px;
+}
+.project-percent {
+    height: 18px;
+    background-color: #2196F3;
+    border-radius: 30px;
+    position: relative;
+    width: 0;
+    transition: 2s linear;
+}
+.project-percent::before {
+    content: attr(percent);
+    position: absolute;
+    right: 0px;
+    left: 0px;
+    padding: 1px 0px;
+    color: #ffffff;
+    font-size: 15px;
+    border-radius: 25px;
+    font-weight: bold;
+    width: 20px;
+    margin: 0px auto;
+}
